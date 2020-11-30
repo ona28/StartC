@@ -29,7 +29,7 @@ namespace Lesson2_Task4
                 Console.Write("Введите пароль: ");
                 string password = Console.ReadLine();
 
-                if (login == "root" || password == "GeekBrains")
+                if (login == "root" && password == "GeekBrains")
                 {
                     result = true;
                     break;

@@ -7,3 +7,4 @@ F:\ОБУЧЕНИЕ\C#\FirstRepo\HomeWorks\Lesson2_Task4\obj\Debug\Lesson2_Task4
 F:\ОБУЧЕНИЕ\C#\FirstRepo\HomeWorks\Lesson2_Task4\obj\Debug\Lesson2_Task4.csproj.CopyComplete
 F:\ОБУЧЕНИЕ\C#\FirstRepo\HomeWorks\Lesson2_Task4\obj\Debug\Lesson2_Task4.exe
 F:\ОБУЧЕНИЕ\C#\FirstRepo\HomeWorks\Lesson2_Task4\obj\Debug\Lesson2_Task4.pdb
+F:\ОБУЧЕНИЕ\C#\FirstRepo\HomeWorks\Lesson2_Task4\obj\Debug\Lesson2_Task4.csprojAssemblyReference.cache
