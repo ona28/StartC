@@ -1,0 +1,9 @@
+F:\ОБУЧЕНИЕ\C#\FirstRepo\HomeWorks\Lesson2_Task4\bin\Debug\Lesson2_Task4.exe.config
+F:\ОБУЧЕНИЕ\C#\FirstRepo\HomeWorks\Lesson2_Task4\bin\Debug\Lesson2_Task4.exe
+F:\ОБУЧЕНИЕ\C#\FirstRepo\HomeWorks\Lesson2_Task4\bin\Debug\Lesson2_Task4.pdb
+F:\ОБУЧЕНИЕ\C#\FirstRepo\HomeWorks\Lesson2_Task4\bin\Debug\Signature.dll
+F:\ОБУЧЕНИЕ\C#\FirstRepo\HomeWorks\Lesson2_Task4\bin\Debug\Signature.pdb
+F:\ОБУЧЕНИЕ\C#\FirstRepo\HomeWorks\Lesson2_Task4\obj\Debug\Lesson2_Task4.csproj.CoreCompileInputs.cache
+F:\ОБУЧЕНИЕ\C#\FirstRepo\HomeWorks\Lesson2_Task4\obj\Debug\Lesson2_Task4.csproj.CopyComplete
+F:\ОБУЧЕНИЕ\C#\FirstRepo\HomeWorks\Lesson2_Task4\obj\Debug\Lesson2_Task4.exe
+F:\ОБУЧЕНИЕ\C#\FirstRepo\HomeWorks\Lesson2_Task4\obj\Debug\Lesson2_Task4.pdb

@@ -1,0 +1,9 @@
+F:\ОБУЧЕНИЕ\C#\FirstRepo\HomeWorks\Signature\obj\Debug\netstandard2.0\Signature.csprojAssemblyReference.cache
+F:\ОБУЧЕНИЕ\C#\FirstRepo\HomeWorks\Signature\obj\Debug\netstandard2.0\Signature.AssemblyInfoInputs.cache
+F:\ОБУЧЕНИЕ\C#\FirstRepo\HomeWorks\Signature\obj\Debug\netstandard2.0\Signature.AssemblyInfo.cs
+F:\ОБУЧЕНИЕ\C#\FirstRepo\HomeWorks\Signature\obj\Debug\netstandard2.0\Signature.csproj.CoreCompileInputs.cache
+F:\ОБУЧЕНИЕ\C#\FirstRepo\HomeWorks\Signature\bin\Debug\netstandard2.0\Signature.deps.json
+F:\ОБУЧЕНИЕ\C#\FirstRepo\HomeWorks\Signature\bin\Debug\netstandard2.0\Signature.dll
+F:\ОБУЧЕНИЕ\C#\FirstRepo\HomeWorks\Signature\bin\Debug\netstandard2.0\Signature.pdb
+F:\ОБУЧЕНИЕ\C#\FirstRepo\HomeWorks\Signature\obj\Debug\netstandard2.0\Signature.dll
+F:\ОБУЧЕНИЕ\C#\FirstRepo\HomeWorks\Signature\obj\Debug\netstandard2.0\Signature.pdb
