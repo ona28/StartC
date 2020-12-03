@@ -55,4 +55,79 @@ namespace PrivateFunctions
             return result;
         }
     }
+
+    public class Complex 
+    {
+        double re;
+        double im;
+
+        public Complex()
+        {
+            re = 0;
+            im = 0;
+        }
+
+        // Сложение двух комплексных чисел
+        public Complex Add(Complex x)
+        {
+            Complex y = new Complex
+            {
+                re = re + x.re,
+                im = im + x.im
+            };
+            return y;
+        }
+
+        //  Вычитание двух комплексных чисел
+        public Complex Subtraction(Complex x)
+        {
+            Complex y = new Complex
+            {
+                re = re - x.re,
+                im = im - x.im
+            };
+            return y;
+        }
+
+        //  Произведение двух комплексных чисел
+        public Complex Multiplication(Complex x)
+        {
+            Complex y = new Complex
+            {
+                re = re * x.re - im * x.im,
+                im = im * x.re + re * x.im
+            };
+            return y;
+        }
+
+        //  Деление двух комплексных чисел
+        public Complex Division(Complex x)
+        {
+            Complex y = new Complex
+            {
+                re = (re * x.re + im * x.im) / (x.re * x.re + x.im * x.im),
+                im = (im * x.re - re * x.im) / (x.re * x.re + x.im * x.im)
+            };
+            return y;
+        }
+
+        public double Re
+        {
+            get { return re; }
+            set { re = value; }
+        }
+
+        public double Im
+        {
+            get { return im; }
+            set {im = value; }
+        }
+
+        public string ToString()
+        {
+            return re + "+" + im + "i";
+        }
+
+
+    }
 }
