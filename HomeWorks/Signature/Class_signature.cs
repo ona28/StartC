@@ -130,4 +130,94 @@ namespace PrivateFunctions
 
 
     }
+
+    public class myDecimal
+    {
+        int num;
+        int den;
+
+        public myDecimal(int num = 0, int den = 1)
+        {
+            this.num = num;
+            this.den = den;
+        }
+
+        // Сложение двух дробей
+        public myDecimal Add(myDecimal x)
+        {
+            myDecimal y = new myDecimal
+            {
+                num = num*x.den + x.num*den,
+                den = den * x.den
+            };
+
+            // нужно сократить дробь, 
+            // найти наибольший общий знаменатель
+
+            return y;
+        }
+
+        //  Вычитание двух дробей
+        public myDecimal Subtraction(myDecimal x)
+        {
+            myDecimal y = new myDecimal
+            {
+                num = num * x.den - x.num * den,
+                den = den * x.den
+            };
+
+            // нужно сократить дробь, 
+            // найти наибольший общий знаменатель
+
+            return y;
+        }
+
+        //  Произведение двух дробей
+        public myDecimal Multiplication(myDecimal x)
+        {
+            myDecimal y = new myDecimal
+            {
+                num = num * x.num,
+                den = den * x.den
+            };
+
+            // нужно сократить дробь, 
+            // найти наибольший общий знаменатель
+
+            return y;
+        }
+
+        //  Деление двух дробей
+        public myDecimal Division(myDecimal x)
+        {
+            myDecimal y = new myDecimal
+            {
+                num = num * x.den,
+                den = den * x.num
+            };
+
+            // нужно сократить дробь, 
+            // найти наибольший общий знаменатель
+
+            return y;
+        }
+
+        public int Num
+        {
+            get { return num; }
+            set { num = value; }
+        }
+
+        public int Den
+        {
+            get { return den; }
+            set { den = value; }
+        }
+
+        public string ToString()
+        {
+            return num + "/" + den;
+        }
+
+    }
 }
