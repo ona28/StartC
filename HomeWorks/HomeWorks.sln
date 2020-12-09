@@ -19,9 +19,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson3_Task2", "Lesson3_Ta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson4_Task1", "Lesson4_Task1\Lesson4_Task1.csproj", "{90E8D0EC-CABE-42D4-9E47-19D825C70697}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyArray", "MyArray\MyArray.csproj", "{62061522-5C2C-46E9-87E5-F25FB44014B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyArray", "MyArray\MyArray.csproj", "{62061522-5C2C-46E9-87E5-F25FB44014B3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson4_Task2", "Lesson4_Task2\Lesson4_Task2.csproj", "{A565ED25-D18F-4D4C-BCE1-A322A5B387E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson5_Task1", "Lesson5_Task1\Lesson5_Task1.csproj", "{04FBEBD8-5AF5-4122-AA32-5206222F31A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{A565ED25-D18F-4D4C-BCE1-A322A5B387E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A565ED25-D18F-4D4C-BCE1-A322A5B387E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A565ED25-D18F-4D4C-BCE1-A322A5B387E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04FBEBD8-5AF5-4122-AA32-5206222F31A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04FBEBD8-5AF5-4122-AA32-5206222F31A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04FBEBD8-5AF5-4122-AA32-5206222F31A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04FBEBD8-5AF5-4122-AA32-5206222F31A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
