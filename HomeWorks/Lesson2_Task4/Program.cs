@@ -18,7 +18,6 @@ namespace Lesson2_Task4
                 "\n его дальше или не пропускает. С помощью цикла do while ограничить ввод пароля тремя попытками.");
 
             bool result = false;
-            int x;
             byte i=1;
 
             do
