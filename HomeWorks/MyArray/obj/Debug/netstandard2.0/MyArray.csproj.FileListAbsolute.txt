@@ -1,9 +1,0 @@
-F:\ОБУЧЕНИЕ\C#\FirstRepo\HomeWorks\MyArray\bin\Debug\netstandard2.0\MyArray.deps.json
-F:\ОБУЧЕНИЕ\C#\FirstRepo\HomeWorks\MyArray\bin\Debug\netstandard2.0\MyArray.dll
-F:\ОБУЧЕНИЕ\C#\FirstRepo\HomeWorks\MyArray\bin\Debug\netstandard2.0\MyArray.pdb
-F:\ОБУЧЕНИЕ\C#\FirstRepo\HomeWorks\MyArray\obj\Debug\netstandard2.0\MyArray.csprojAssemblyReference.cache
-F:\ОБУЧЕНИЕ\C#\FirstRepo\HomeWorks\MyArray\obj\Debug\netstandard2.0\MyArray.AssemblyInfoInputs.cache
-F:\ОБУЧЕНИЕ\C#\FirstRepo\HomeWorks\MyArray\obj\Debug\netstandard2.0\MyArray.AssemblyInfo.cs
-F:\ОБУЧЕНИЕ\C#\FirstRepo\HomeWorks\MyArray\obj\Debug\netstandard2.0\MyArray.csproj.CoreCompileInputs.cache
-F:\ОБУЧЕНИЕ\C#\FirstRepo\HomeWorks\MyArray\obj\Debug\netstandard2.0\MyArray.dll
-F:\ОБУЧЕНИЕ\C#\FirstRepo\HomeWorks\MyArray\obj\Debug\netstandard2.0\MyArray.pdb
