@@ -10,17 +10,17 @@ namespace GameEngine3D
         /// <param name="rb"> объект Rigidbody</param>
         /// <param name="acceleration">ускорение перемещени€</param>
         /// <returns></returns>
-        public bool Move(Rigidbody rb, int acceleration)
+        public bool Move(Vector3 direction, Rigidbody rb, int acceleration, float deltaTime)
         {
-            float moveHorizontal = Input.GetAxis("Horizontal");
-            float moveVertical = Input.GetAxis("Vertical");
+            // кака€ то шл€па с перемещением, с включенным аниматором скорость меньше
+            // не знаю отчего это зависит. магическое число - просто тупо подбирала скорость визуально.
 
-            Vector3 s = new Vector3(moveHorizontal, 0.0f, moveVertical).normalized;
-            rb.AddRelativeForce(s * acceleration * rb.mass * 30, ForceMode.Force);
+            //rb.AddRelativeForce(s * acceleration * rb.mass * 10, ForceMode.Impulse);
+            rb.AddRelativeForce(direction * acceleration * rb.mass * 50 * deltaTime, ForceMode.Acceleration);
 
 
             // проверка состо€ни€
-            if (s != Vector3.zero)
+            if (direction != Vector3.zero)
             {
                 return true;
             }

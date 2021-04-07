@@ -3,34 +3,36 @@ using UnityEngine;
 
 namespace GameEngine3D
 {
-    internal sealed class ControllerPlayer : IAwake, IUpdate, IFixUpdate, IEnable, IDisable
+    internal sealed class ControllerPlayer : IFixUpdate, IEnable, IDisable
     {
-        private int _acceleration = 1;   // ускорение бег
+        private int _acceleration = 1;
+        private float _forceJump = 20f;
 
-        private bool _fire = false;
-        private bool _jump = false;
-        private bool _boom = false;
-        private bool _isMove = false;
         private bool _onFloor = true;
         private bool _isAlive = true;
+        private bool _isMove = false;
+        private bool _fire = false;
 
         private readonly Rigidbody _rb;
         private readonly Transform _player;
 
         private ViewPlayer _playerView;
         private ModelPlayer _playerModel;
+        private ControllerInputPC _ctrInput;
 
         private ControllerMove _ctrMove = new ControllerMove();
         private ControllerRotate _ctrRotate = new ControllerRotate();
+        private ControllerJump _ctrJump = new ControllerJump();
 
 
-        public ControllerPlayer(ModelPlayer modelPlayer, ViewPlayer viewPlayer)
+        public ControllerPlayer(ModelPlayer modelPlayer, ViewPlayer viewPlayer, ControllerInputPC inputController)
         {
-            _player = viewPlayer.GetComponent<Transform>() ?? null; ;
-            _rb = viewPlayer.GetComponent<Rigidbody>() ?? null;
+            _player = viewPlayer.GetComponent<Transform>();
+            _rb = viewPlayer.GetComponent<Rigidbody>();
 
             _playerView = viewPlayer;
             _playerModel = modelPlayer;
+            _ctrInput = inputController;
         }
 
         private void ChangeHealth(int health)
@@ -45,62 +47,87 @@ namespace GameEngine3D
             Disable();
         }
 
+        private void CollisionEnterChange(string tag)
+        {
+            if (tag == "Enemy")
+                _playerModel.SetNewHealth(10);
+        }
+
+        #region PlayerAction
+        private void Move(Vector3 direction, float deltaTime)
+        {
+            _isMove = _ctrMove.Move(direction, _rb, _acceleration, deltaTime);
+        }
+
+        private void Stop()
+        {
+            _isMove = false;
+        }
+
+        private void ChangeSpeed(int acceleration)
+        {
+            _acceleration = acceleration;
+        }
+
+        private void Rotate(float mouseX)
+        {
+            _ctrRotate.Rotate(_player, mouseX, 4f);
+        }
+
+        private void Jump()
+        {
+            if (_onFloor) _ctrJump.Jump(_rb, _forceJump);
+        }
+
+        private void Fire()
+        {
+            _fire = true;           
+        }
+        #endregion
+
         public void Enable()
         {
-            
+            _playerModel.Death += Death;
+            _playerModel.ChangedHealth += ChangeHealth;
+            _playerView.OnCollisionEnterChange += CollisionEnterChange;
+            _ctrInput.Move += Move;
+            _ctrInput.Stop += Stop;
+            _ctrInput.ChangeSpeed += ChangeSpeed;
+            _ctrInput.Rotate += Rotate;
+            _ctrInput.Fire += Fire;
+            _ctrInput.Jump += Jump;
         }
 
         public void Disable()
         {
             _playerModel.Death -= Death;
             _playerModel.ChangedHealth -= ChangeHealth;
+            _playerView.OnCollisionEnterChange -= CollisionEnterChange;
+            _ctrInput.Move -= Move;
+            _ctrInput.Stop -= Stop;
+            _ctrInput.ChangeSpeed -= ChangeSpeed;
+            _ctrInput.Rotate -= Rotate;
+            _ctrInput.Fire -= Fire;
+            _ctrInput.Jump -= Jump;
         }
-
-        public void Awake()
-        {
-            _playerModel.Death += Death;
-            _playerModel.ChangedHealth += ChangeHealth;
-        }
-
-        public void Update(float deltaTime)
-        {
-            if (!_isAlive) return;
-
-            if (Input.GetMouseButtonDown(0)) _fire = true;
-            if (Input.GetKeyDown(KeyCode.Space)) _jump = true;
-            if (Input.GetKeyDown(KeyCode.F)) _boom = true;
-
-            if (!Input.GetKey(KeyCode.LeftShift)) _acceleration = 3;  // всегда бежит, с Shift - ходит
-            else _acceleration = 1;
-
-            // вращение
-            float MouseX = Input.GetAxis("Mouse X");
-            if (MouseX != 0)
-            {
-                _ctrRotate.Rotate(_player, MouseX, 4f);
-            }
-        }
-
+         
         public void FixUpdate(float deltaTime)
         {
             if (!_isAlive) return;
 
-            // проверка на полу игрок или нет
-            if (Physics.Raycast(_player.position, Vector3.down, 0.4f))
-            {
-                _onFloor = true;
-            }
-            else
-            {
-                _onFloor = false;
-            }
+            _onFloor = _ctrJump.CheckOnFloor(_player.position);
+            _playerView.Move(_isMove, _acceleration, _onFloor);
+            
+            
+            int bulls = 1;
+            if (bulls == 0) return;
 
-            _isMove = _ctrMove.Move(_rb, _acceleration);
-            //if (_jump && _onFloor) Jump();
-            //if (_fire) Fire();            
-            //if (_boom) Boom();
+            if (_fire)
+            {
+                _fire = false;
+                _playerView.Fire();                
+            }
         }
-
     }
 }
 

@@ -22,9 +22,10 @@ namespace GameEngine3D
         public void SetNewHealth(int damage)
         {
             _hp -= damage;
-            if (_hp > 0)
+            if (_hp >= 0)
                 ChangedHealth?.Invoke(_hp);
-            else
+            
+            if (_hp <= 0)
                 Death?.Invoke();
         }
     }

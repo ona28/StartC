@@ -8,11 +8,13 @@ namespace GameEngine3D
         {
             Camera camera = Camera.main;
             GameObject player = GameObject.FindGameObjectWithTag("Player");
-            var viewPlayer = player.GetComponent<ViewPlayer>();
+            ViewPlayer viewPlayer = player.GetComponent<ViewPlayer>();
             ModelPlayer modelPlayer = new ModelPlayer();
+            ControllerInputPC inputController = new ControllerInputPC();
 
+            controllers.Add(inputController);
             controllers.Add(new ControllerCamera(player.transform, camera.transform));
-            controllers.Add(new ControllerPlayer(modelPlayer, viewPlayer));
+            controllers.Add(new ControllerPlayer(modelPlayer, viewPlayer, inputController));
         }
     }
 }
