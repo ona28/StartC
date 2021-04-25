@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace GameEngine3D
 {
-    public class ViewPlayer : MonoBehaviour, IAwake
+    public class ViewPlayer : MonoBehaviour
     {
         [SerializeField] private Text textHP = null;
         [SerializeField] private AudioClip clipFire = null;
@@ -16,8 +16,8 @@ namespace GameEngine3D
 
         private Animator _anim = null;
         private AudioSource _clip = null;
-           
-        public void Awake()
+
+        private void Start()
         {
             _anim = GetComponent<Animator>();
             _clip = GetComponent<AudioSource>();
@@ -58,6 +58,10 @@ namespace GameEngine3D
             bul.Init(name); // временно старый код
 
             _clip.PlayOneShot(clipFire, 0.2f);
+        }
+
+        public void Jump()
+        { 
         }
 
         private void PlaySoundsMove()

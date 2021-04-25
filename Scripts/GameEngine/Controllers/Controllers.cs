@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace GameEngine3D
 {
-    internal sealed class Controllers : IAwake, IStart, IUpdate, IFixUpdate, ILateUpdate, IEnable, IDisable
+    public sealed class Controllers : IAwake, IStart, IUpdate, IFixUpdate, ILateUpdate, IEnable, IDisable
     {
         private readonly List<IAwake> _awakeControllers;
         private readonly List<IStart> _startControllers;

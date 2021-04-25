@@ -6,7 +6,7 @@ namespace GameEngine3D
     internal sealed class ControllerPlayer : IFixUpdate, IEnable, IDisable
     {
         private int _acceleration = 1;
-        private float _forceJump = 20f;
+        private float _forceJump = 30f;
 
         private bool _onFloor = true;
         private bool _isAlive = true;
@@ -77,6 +77,7 @@ namespace GameEngine3D
         private void Jump()
         {
             if (_onFloor) _ctrJump.Jump(_rb, _forceJump);
+            _playerView.Jump();
         }
 
         private void Fire()

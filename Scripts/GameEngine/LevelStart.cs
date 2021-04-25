@@ -7,34 +7,14 @@ namespace GameEngine3D
 
     public class LevelStart : MonoBehaviour
     {
-        [SerializeField]  private GameObject Enemy = null;
-        private GameObject[] Enemes = new GameObject[0];
-        private GameObject exitLevel = null;
-
+        [SerializeField] private Data _data;
         private Controllers _controllers;
-
-        private void SpawnEnemy()
-        {
-            GameObject[] gameObjects;
-            gameObjects = GameObject.FindGameObjectsWithTag("EnemyPosition");
-
-            foreach (GameObject @object in gameObjects)
-            {
-                _ = Instantiate(Enemy, @object.transform, false);                
-            }
-
-            Enemes = GameObject.FindGameObjectsWithTag("Enemy");
-            exitLevel = GameObject.FindGameObjectWithTag("LevelExit");
-            exitLevel.SetActive(false);
-            Cursor.lockState = CursorLockMode.Locked;
-        }
 
         #region Init
         private void Awake()
         {
             _controllers = new Controllers();
-            _ = new LevelInit(_controllers);
-            SpawnEnemy();
+            _ = new LevelInit(_controllers, _data);
 
             _controllers.Awake();            
         }

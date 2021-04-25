@@ -16,7 +16,7 @@ namespace GameEngine3D
             // не знаю отчего это зависит. магическое число - просто тупо подбирала скорость визуально.
 
             //rb.AddRelativeForce(s * acceleration * rb.mass * 10, ForceMode.Impulse);
-            rb.AddRelativeForce(direction * acceleration * rb.mass * 50 * deltaTime, ForceMode.Acceleration);
+            rb.AddRelativeForce(direction.normalized * rb.mass * (1 + acceleration) * 8 * deltaTime, ForceMode.Impulse);
 
 
             // проверка состояния
