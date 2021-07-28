@@ -26,7 +26,10 @@ namespace Platformer2D
 
             if (_point.y > 1f || _point.x > 1f)
             {
-                _paralaxView._transform.position = new Vector3(_cam.ViewportToWorldPoint(Vector3.zero).x, _paralaxView.transform.position.y, 0) + _dist * _widthSprite / 2;
+                _paralaxView._transform.position = new Vector3(_cam.ViewportToWorldPoint(Vector3.zero).x, 
+                                                                _cam.transform.position.y + Random.Range(-3.0f, 3.0f),
+                                                                0) + _dist * _widthSprite / 2;
+
                 _paralaxView._renderer.flipX = !_paralaxView._renderer.flipX;
             }
             else
