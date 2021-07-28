@@ -21,6 +21,7 @@ namespace Platformer2D
         private SpriteAnimatorController _playerAnimator;
         private SpriteAnimatorController _enemyAnimator;
 
+        private PlayerController _playerController;
         private ParalaxController _prlxCtrl1;
         private ParalaxController _prlxCtrl2;
         private Camera _cam;
@@ -34,7 +35,7 @@ namespace Platformer2D
 
             _playerConfig = Resources.Load<SpriteAnimatorConfig>("PlayerAnimCfg");
             _playerAnimator = new SpriteAnimatorController(_playerConfig);
-            _playerAnimator.StartAnimation(_playerView._spriteRenderer, "Player", AnimState.Run, true, _animationSpeed);
+            _playerController = new PlayerController(_playerView, _playerAnimator);
 
             _enemyConfig = Resources.Load<SpriteAnimatorConfig>("EnemyAnimCfg");
             _enemyAnimator = new SpriteAnimatorController(_enemyConfig);
@@ -48,7 +49,7 @@ namespace Platformer2D
             _prlxCtrl2.Update();
 
             // player
-            _playerAnimator.Update();
+            _playerController.Update();
             _enemyAnimator.Update();
         }
 
