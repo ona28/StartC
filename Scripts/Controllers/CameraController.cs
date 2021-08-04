@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Platformer2D
 {
-    public class CameraController
+    public class CameraController: IUpdate
     {
         private float X;
         private float Y;

@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Platformer2D
 {
-    public class PlayerController
+    public class PlayerController : IUpdate
     {
         private float _xAxisInput;
         
@@ -16,7 +16,7 @@ namespace Platformer2D
         private bool isMoving;
         private bool _isJump;
 
-        private float _jumpForce = 9f;
+        private float _jumpForce = 12f;
         private float _jumpTreshold = 1f;
 
         //private float _yVelocity = 0f;

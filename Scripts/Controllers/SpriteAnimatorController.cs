@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Platformer2D
 {
-    public class SpriteAnimatorController : IDisposable
+    public class SpriteAnimatorController : IDisposable, IUpdate
     {
 
         private sealed class Animation

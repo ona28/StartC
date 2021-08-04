@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Platformer2D
 {
-    public sealed class PortalController
+    public sealed class PortalController : IUpdate
     {
         private PortalView _view;
         private Vector3 _dirVector = new Vector3(0,0,1);

@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Platformer2D
 {
-    public class ParalaxController
+    public class ParalaxController : IUpdate
     {
         private ParalaxView _paralaxView;
         private Vector3 _dist = Vector3.left;
