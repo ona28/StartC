@@ -421,3 +421,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _placeForUi: {fileID: 1903552}
+  _playConfig: {fileID: 11400000, guid: 8ffcdb5d34772804ebd2501a6917fb5f, type: 2}
